@@ -6,25 +6,29 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 
 //import androidx.fragment.app
 
 import com.atuma.dayspringtutorials.R
+import javax.inject.Inject
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val homeViewModel: HomeViewModel by viewModels { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
 
@@ -34,14 +38,14 @@ class HomeFragment : Fragment() {
         val partThreeCourses: TextView = root.findViewById(R.id.part_three_courses)
 
 
-        partOneCourses.setOnClickListener(View.OnClickListener {
-           findNavController().navigate(R.id.action_nav_home_to_partOneCoursesFragment)
-        })
+        partOneCourses.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_home_to_partOneCoursesFragment)
+        }
 
 
-        partTwoCourses.setOnClickListener(View.OnClickListener {
+        partTwoCourses.setOnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_partTwoCoursesFragment)
-        })
+        }
 
         partThreeCourses.setOnClickListener(View.OnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_partThreeCoursesFragment)
