@@ -44,4 +44,7 @@
         <item name="android:textColor">@color/lightGray</item>
     </style>
 
+    <style name="AppTheme.Title">
+        <![CDATA[<style name="AppTheme.Title">         <item name="android:fontFamily">sans-serif-medium</item>         <item name="android:textSize">20sp</item>     </style>]]></style>
+
 </resources>

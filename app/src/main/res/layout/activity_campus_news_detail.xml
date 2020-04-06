@@ -1,9 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#E0E0E0"
+    android:theme="@style/Theme.Design.NoActionBar"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     tools:context=".ui.campus_news.CampusNewsDetailActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapse_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginEnd="64dp"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                    android:fitsSystemWindows="true"
+                        android:background="@drawable/gradient_up" />
+                    <ImageView
+                        android:alpha="1.0"
+                        android:scaleType="centerCrop"
+                        app:layout_collapseMode="parallax"
+                        android:src="@drawable/food_1"
+                        android:id="@+id/campus_news_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="parallax"
+                        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                    </androidx.appcompat.widget.Toolbar>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/is_fav"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:elevation="5dp"
+            android:backgroundTint="@color/lightGray"
+            app:fabSize="auto"
+            app:elevation="5dp"
+            android:padding="0dp"
+            app:maxImageSize="38dp"
+            android:layout_marginEnd="10dp"
+            app:layout_anchorGravity="end|bottom|right"
+            app:layout_anchor="@id/app_bar"
+            android:layout_alignBottom="@id/app_bar"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_favorite_white_24dp"
+             />
+
+    <androidx.core.widget.NestedScrollView
+        android:background="@color/lightGray"
+        android:padding="15dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:clipToPadding="true"
+        tools:showIn="@layout/activity_campus_news_detail"
+        tools:context=".ui.campus_news.CampusNewsDetailActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/campus_news_title"
+                style="@style/AppTheme.Title"
+                android:textSize="21sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:text="Campus News Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/campus_news_author"
+                android:text="Oluwasina Marvellous"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                />
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textAlignment="textStart"
+                android:text="the text goes in here, this is where the body of the news should be"
+                android:verticalScrollbarPosition="right"
+                android:id="@+id/campus_news_description"
+                android:layout_width="match_parent"
+                android:gravity="start"
+
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="This is the time"
+                android:textColor="@color/black"
+                android:singleLine="false"
+                android:maxLines="1000"
+                android:layout_gravity="end"
+                android:id="@+id/campus_news_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/comment_title"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:text="Add a comment"-->
+<!--                android:textSize="21sp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:textColor="@color/colorPrimaryDark"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/comment_edit_text"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:background="@color/white"-->
+<!--                android:hint="Enter Your Comment"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                />-->
+
+<!--            <Button-->
+<!--                android:textColor="@color/white"-->
+<!--                android:text="send"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/post_comment_button_background"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+        </LinearLayout>
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <!-- View for empty ratings -->
+    <LinearLayout
+        android:id="@+id/viewEmptyRatings"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:background="@color/lightGray"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <ImageView
+            android:src="@drawable/pizza_monster"
+            style="@style/AppTheme.PizzaGuy" />
+
+        <TextView
+            style="@style/AppTheme.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/message_no_results"
+            android:textColor="@color/textGray" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

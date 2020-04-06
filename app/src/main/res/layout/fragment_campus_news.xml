@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
 
         tools:listitem="@layout/item_campus_news"
-        android:background="@color/white"
-        android:layout_height="wrap_content"/>
+        android:background="@color/lightGray"
+        android:layout_height="match_parent"/>
 
     <!-- Empty list (pizza guy) view -->
     <LinearLayout
@@ -48,8 +48,8 @@
         android:id="@+id/progressLoading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/recyclerRestaurants"
-        android:layout_alignTop="@+id/recyclerRestaurants"
+        android:layout_alignBottom="@+id/campus_news_recycler"
+        android:layout_alignTop="@+id/campus_news_recycler"
         android:layout_centerHorizontal="true"
         android:visibility="gone" />
 

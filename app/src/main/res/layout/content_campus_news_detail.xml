@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:background="@color/lightGray"
+android:padding="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/campus_news_title"
+                style="@style/AppTheme.Title"
+                android:textSize="21sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:text="Campus News Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/campus_news_author"
+                android:text="Oluwasina Marvellous"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                />
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textAlignment="textStart"
+                android:text="the text goes in here, this is where the body of the news should be"
+                android:verticalScrollbarPosition="right"
+                android:id="@+id/campus_news_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="This is the time"
+                android:layout_gravity="end"
+                android:id="@+id/campus_news_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:id="@+id/hr"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/comment_title"
+                android:layout_marginTop="10dp"
+                android:text="Add a comment"
+                android:textSize="21sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/comment_edit_text"
+                android:minLines="3"
+                android:background="@drawable/comment_edit_text_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:textColor="@color/white"
+                android:text="send"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/post_comment_button_background"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>

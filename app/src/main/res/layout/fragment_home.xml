@@ -39,7 +39,6 @@
             android:background="@drawable/wire_button"
             android:outlineSpotShadowColor="@color/secondaryText"
             android:text="Part 1 Courses"
-            android:textColor="@color/black"
             android:textStyle="bold"
             android:shadowColor="@color/secondaryText"
             android:layout_height="wrap_content"/>
@@ -56,7 +55,6 @@
             android:outlineSpotShadowColor="@color/secondaryText"
             android:text="Part 2 Courses"
             android:shadowColor="@color/secondaryText"
-            android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_height="wrap_content"/>
 
@@ -72,7 +70,6 @@
             android:outlineSpotShadowColor="@color/secondaryText"
             android:text="Part 3 Courses"
             android:shadowColor="@color/secondaryText"
-            android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_height="wrap_content"/>
 
