@@ -56,5 +56,14 @@ dependencies {
     //fragment
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
 
+    // Firestore (Kotlin)
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.4.1'
+
+    //Round ImageView
+    implementation 'cn.gavinliu:ShapedImageView:0.8.7'
+
+    //Glide Image loading
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
 
 }

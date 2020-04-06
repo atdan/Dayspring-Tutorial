@@ -13,47 +13,47 @@
         <action
             android:id="@+id/action_nav_home_to_partOneCoursesFragment"
             app:destination="@id/partOneCoursesFragment"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit" />
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right" />
         <action
             android:id="@+id/action_nav_home_to_partTwoCoursesFragment"
             app:destination="@id/partTwoCoursesFragment"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit" />
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right" />
         <action
             android:id="@+id/action_nav_home_to_partThreeCoursesFragment"
             app:destination="@id/partThreeCoursesFragment"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit" />
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.atuma.dayspringtutorials.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_leaderboard"
+        android:name="com.atuma.dayspringtutorials.ui.leaderboard.LeaderboardFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.atuma.dayspringtutorials.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_forum"
+        android:name="com.atuma.dayspringtutorials.ui.forum.ForumFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.atuma.dayspringtutorials.ui.tools.ToolsFragment"
+        android:id="@+id/nav_campus_news"
+        android:name="com.atuma.dayspringtutorials.ui.campus_news.CampusNewsFragment"
         android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_campus_news" />
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.atuma.dayspringtutorials.ui.share.ShareFragment"
+        android:id="@+id/nav_accomodation"
+        android:name="com.atuma.dayspringtutorials.ui.accomodation.AccomodationFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
 
     <fragment
-        android:id="@+id/nav_send"
-        android:name="com.atuma.dayspringtutorials.ui.send.SendFragment"
+        android:id="@+id/nav_subscription"
+        android:name="com.atuma.dayspringtutorials.ui.subscription.SubscriptionFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
     <fragment

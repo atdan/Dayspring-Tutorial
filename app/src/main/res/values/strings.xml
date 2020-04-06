@@ -19,4 +19,11 @@
     <string name="mth_101">MTH 101</string>
     <string name="mth_102">MTH 102</string>
     <string name="mth_104">MTH 104</string>
+    <string name="menu_leaderboard">Leaderboard</string>
+    <string name="menu_forum">Forum</string>
+    <string name="menu_campus_news">Campus News</string>
+    <string name="menu_accomodation">Accomodation</string>
+    <string name="menu_subscription">Subscription</string>
+    <string name="menu_find_us">Find Us</string>
+    <string name="message_no_results">Opps, seems something went wrong \nswipe down to refresh</string>
 </resources>
