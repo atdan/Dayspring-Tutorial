@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/lightGray"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccountActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/help_us_know_you"
+            android:layout_width="wrap_content"
+            android:text="Help us know you"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/fill_in_details_text"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/help_us_know_you"
+            android:layout_width="wrap_content"
+            android:text="Fill in your details below to help with your registration."
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:id="@+id/surname"
+            app:hintTextColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            app:endIconMode="clear_text"
+            android:paddingEnd="5dp"
+            android:layout_below="@id/fill_in_details_text"
+            android:layout_margin="5dp"
+            android:hint="@string/prompt_surname"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/surnameEditText"
+                android:theme="@style/TextInputLayout"
+                android:gravity="start"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_margin="5dp"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:endIconMode="clear_text"
+            app:hintTextColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:layout_margin="5dp"
+            android:paddingEnd="5dp"
+            android:hint="@string/prompt_first_name"
+            android:id="@+id/first_name"
+            android:layout_below="@id/surname"
+
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:theme="@style/TextInputLayout"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/first_nameEditText"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:id="@+id/email"
+            app:endIconMode="clear_text"
+            android:paddingEnd="5dp"
+            android:hint="@string/prompt_email"
+            app:hintTextColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_margin="5dp"
+
+            android:layout_below="@id/first_name"
+
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextInputLayout"
+
+                android:gravity="start"
+
+                android:id="@+id/emailEditText"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:id="@+id/phone_number"
+            android:layout_below="@id/email"
+            android:layout_margin="5dp"
+
+            android:paddingEnd="5dp"
+            android:hint="@string/prompt_phone_number"
+            app:hintTextColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            app:endIconMode="clear_text"
+            android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/phone_numberEditText"
+                android:theme="@style/TextInputLayout"
+
+                android:gravity="start"
+                android:layout_margin="5dp"
+                android:inputType="phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:endIconMode="clear_text"
+            android:id="@+id/matric_number"
+            android:layout_below="@id/phone_number"
+            android:layout_margin="5dp"
+            app:hintTextColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:paddingEnd="5dp"
+
+            android:hint="@string/prompt_matric_number"
+
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:id="@+id/matric_numberEditText"
+                android:theme="@style/TextInputLayout"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+
+                android:layout_margin="5dp"
+                android:inputType="textCapWords"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RelativeLayout
+            android:layout_below="@id/matric_number"
+android:id="@+id/faculty_spinner_layout"
+            android:background="@drawable/wire_button"
+android:gravity="center"
+            android:layout_margin="5dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+                android:layout_width="match_parent"
+                android:elevation="5dp"
+                android:spinnerMode="dialog"
+                app:smsp_arrowColor="@color/colorPrimaryDark"
+                app:smsp_errorTextColor="@color/red"
+                android:outlineAmbientShadowColor="@color/textGray"
+                android:paddingStart="15dp"
+                android:id="@+id/faculty_spinner"
+                android:layout_centerVertical="true"
+                app:smsp_underlineSize="0.5dp"
+                app:smsp_highlightColor="@color/colorPrimaryDark"
+                app:smsp_hintSize="18sp"
+
+                android:hapticFeedbackEnabled="true"
+                android:popupElevation="5dp"
+                app:smsp_hint="Faculty"
+                android:layout_marginStart="10dp"
+                app:smsp_underlineColor="@color/lightGray"
+                app:smsp_isSearchable="false"
+                android:outlineSpotShadowColor="@color/textGray"
+                app:smsp_floatingLabelColor="@color/colorPrimaryDark"
+                app:smsp_isReSelectable="true"
+                app:smsp_hintColor="@color/colorPrimaryDark"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_margin="5dp"
+            android:background="@drawable/wire_button"
+            android:gravity="center"
+            android:layout_below="@id/faculty_spinner_layout"
+android:id="@+id/department_spinner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+                android:id="@+id/department_spinner"
+                android:layout_width="match_parent"
+                android:elevation="5dp"
+                android:layout_marginStart="15dp"
+                app:smsp_highlightColor="@color/colorPrimaryDark"
+                android:spinnerMode="dialog"
+                app:smsp_arrowColor="@color/colorPrimaryDark"
+                app:smsp_errorTextColor="@color/red"
+                app:smsp_underlineSize="0.5dp"
+                android:outlineAmbientShadowColor="@color/textGray"
+                android:paddingStart="10dp"
+                android:outlineSpotShadowColor="@color/textGray"
+                android:popupElevation="5dp"
+                app:smsp_hintSize="18sp"
+                android:hapticFeedbackEnabled="true"
+                app:smsp_hint="Department"
+                app:smsp_underlineColor="@color/lightGray"
+                app:smsp_isSearchable="false"
+                app:smsp_floatingLabelColor="@color/colorPrimaryDark"
+                app:smsp_isReSelectable="true"
+                app:smsp_hintColor="@color/colorPrimaryDark"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/continue_sign_up"
+            android:layout_below="@id/department_spinner_layout"
+            android:layout_width="200dp"
+            android:elevation="5dp"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="48dp"
+            android:gravity="center"
+            android:paddingEnd="20dp"
+            android:drawablePadding="5dp"
+            android:textColor="@color/white"
+            android:background="@drawable/login_btn_bgd"
+            android:enabled="true"
+            android:drawableEnd="@drawable/ic_arrow_forward_white_24dp"
+            app:spinning_bar_color="@color/white"
+            app:spinning_bar_width="5dp"
+            app:spinning_bar_padding="3dp"
+            android:text="          CONTINUE"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

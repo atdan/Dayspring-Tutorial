@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:layout_margin="15dp"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/enter_credentials"
+        android:layout_width="wrap_content"
+        android:text="Enter your credentials"
+        android:textSize="21sp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="14dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enter_credentials"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="51dp"
+        android:padding="5dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/wire_button"
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/ic_account_circle_black_24dp"
+        android:hint="@string/prompt_username"
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_below="@id/username"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:padding="5dp"
+        android:background="@drawable/wire_button"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="14dp"
+        android:drawablePadding="5dp"
+        android:hint="@string/prompt_password"
+        android:drawableStart="@drawable/ic_lock_outline_black_24dp"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/re_password"
+        android:layout_width="match_parent"
+        android:layout_below="@id/password"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:padding="5dp"
+        android:background="@drawable/wire_button"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="14dp"
+        android:drawablePadding="5dp"
+        android:hint="@string/prompt_re_enter_password"
+        android:drawableStart="@drawable/ic_lock_outline_black_24dp"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/continue_sign_up"
+        android:layout_below="@id/re_password"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="48dp"
+        android:gravity="center"
+        android:paddingEnd="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/login_btn_bgd"
+        android:enabled="true"
+        android:drawableEnd="@drawable/ic_arrow_forward_white_24dp"
+        app:spinning_bar_color="@color/white"
+        app:spinning_bar_width="5dp"
+        app:spinning_bar_padding="3dp"
+        android:text="CONTINUE"
+        />
+
+
+</RelativeLayout>

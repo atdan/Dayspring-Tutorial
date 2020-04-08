@@ -26,4 +26,93 @@
     <string name="menu_subscription">Subscription</string>
     <string name="menu_find_us">Find Us</string>
     <string name="message_no_results">Opps, seems something went wrong \nswipe down to refresh</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email  (optional)</string>
+    <string name="prompt_password">    Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="prompt_username">    Username</string>
+    <string name="login">LOG IN</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="prompt_surname">Surname</string>
+    <string name="prompt_first_name">First Name</string>
+    <string name="prompt_phone_number">Phone   eg: 08034099014</string>
+    <string name="prompt_re_enter_password">Re-enter Password</string>
+    <string name="prompt_matric_number">Matric Number</string>
+    
+    <string-array name="Administration_dept">
+        <item>Accounting</item>
+        <item>Business Administration</item>
+    </string-array>
+    <string-array name="Agriculture_dept">
+        <item>Animal Science</item>
+        <item>FNCS</item>
+    </string-array>
+    <string-array name="Arts_dept">
+        <item>Dramatic Arts</item>
+        <item>Music</item>
+        <item>Fine Art</item>
+    </string-array>
+    <string-array name="Education_dept">
+        <item>Physics Education</item>
+        <item>Biology Education</item>
+        <item>PHE</item>
+    </string-array>
+    <string-array name="EDM_dept">
+        <item>
+            Building
+        </item>
+        <item>Architecture</item>
+        <item>Quantity Survey</item>
+    </string-array>
+
+    <string-array name="ClinicalSciences_dept">
+        <item>Medicine</item>
+        <item>Surgery</item>
+    </string-array>
+
+    <string-array name="MBBS_dept">
+        <item>I</item>
+        <item>Don\'t</item>
+        <item>Know</item>
+    </string-array>
+    <string-array name="Law_dept">
+        <item>Land Law</item>
+        <item>Criminal Law</item>
+    </string-array>
+
+    <string-array name="Pharmacy_dept">
+        <item>Pharmacy</item>
+    </string-array>
+
+    <string-array name="Dentistrry_dept">
+        <item>Dentistry</item>
+    </string-array>
+
+    <string-array name="Sciences_dept">
+        <item>Microbiology</item>
+        <item>Biochemistry</item>
+        <item>Chemistry</item>
+        <item>Physics</item>
+    </string-array>
+
+    <string-array name="Technology_dept">
+        <item>Computer Science and Engineering</item>
+        <item>Mechanical Engineering</item>
+        <item>Chemical Engineering</item>
+        <item>Food Science and Technology</item>
+    </string-array>
+
+    <string-array name="SocialSciences_dept">
+        <item>Demography and Statistics</item>
+        <item>Social science</item>
+    </string-array>
+
+    <string-array name="Default_dept">
+        <item>Select a faculty</item>
+    </string-array>
 </resources>
