@@ -190,7 +190,7 @@
         tools:visibility="gone">
 
         <ImageView
-            android:src="@drawable/pizza_monster"
+            android:src="@drawable/ic_no_network"
             style="@style/AppTheme.PizzaGuy" />
 
         <TextView

@@ -8,7 +8,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import com.atuma.dayspringtutorials.R
 
-public class Utils {
+object Utils {
 
     fun animateEnterRight(activity: Activity) {
         activity.overridePendingTransition(R.anim.enter_b, R.anim.exit_a)

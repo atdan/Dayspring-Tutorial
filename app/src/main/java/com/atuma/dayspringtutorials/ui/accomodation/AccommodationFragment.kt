@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.atuma.dayspringtutorials.HomeActivity
 import com.atuma.dayspringtutorials.R
 import com.atuma.dayspringtutorials.adapter.AccommodationAdapter
+import com.atuma.dayspringtutorials.util.Utils
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -96,7 +97,7 @@ class AccommodationFragment : Fragment(), AccommodationAdapter.OnAccommodationSe
 
     companion object {
 
-        private const val TAG = "AccomodationFragment"
+        private const val TAG = "AccommodationFragment"
 
         private const val LIMIT = 4
     }
@@ -104,7 +105,7 @@ class AccommodationFragment : Fragment(), AccommodationAdapter.OnAccommodationSe
     override fun OnAccommodationSelected(accommodation: DocumentSnapshot) {
         // Go to the details page for the selected restaurant
         val intent = Intent(activity, AccommodationDetailActivity::class.java )
-        intent.putExtra(AccommodationDetailActivity.KEY_CAMPUS_NEWS_ID, accommodation.id)
+        intent.putExtra(AccommodationDetailActivity.KEY_ACCOMMODATION_ID, accommodation.id)
         val bundle = ActivityOptions.makeCustomAnimation(activity,R.anim.slide_in_from_right, R.anim.slide_out_to_left).toBundle()
         startActivity(intent, bundle)
     }

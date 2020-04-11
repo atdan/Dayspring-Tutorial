@@ -8,5 +8,235 @@
     android:layout_height="match_parent"
     tools:context=".ui.accomodation.AccommodationDetailActivity">
 
+    <cn.gavinliu.android.lib.shapedimageview.ShapedImageView
+        android:id="@+id/image"
+        app:round_radius="10dp"
+        app:shape_mode="round_rect"
+        android:scaleType="centerCrop"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@id/image"
+        app:autoPlay="false"
+        app:autoPlayDelay="4000"
+        app:carouselBackground="@color/lightGray"
+        app:carouselType="SHOWCASE"
+        app:imageScaleType="centerCrop"
+        app:imageViewId="@id/image_view"
+        app:itemLayout="@layout/custom_fixed_size_item_layout"
+        app:nextButtonId="@id/custom_btn_next"
+        app:nextButtonLayout="@layout/custom_next_button_layout"
+        app:nextButtonMargin="8dp"
+        app:previousButtonId="@id/custom_btn_previous"
+        app:previousButtonLayout="@layout/custom_previous_button_layout"
+        app:previousButtonMargin="4dp"
+        app:scaleOnScroll="true"
+        app:scalingFactor=".25"
+        app:showBottomShadow="false"
+        app:showCaption="true"
+        app:showIndicator="true"
+        app:showNavigationButtons="false"
+        app:showTopShadow="false" />
+
+    <me.relex.circleindicator.CircleIndicator2
+        android:id="@+id/custom_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@id/carousel"
+        app:ci_animator="@animator/scale_with_alpha"
+        app:ci_drawable="@drawable/dot"
+        app:ci_drawable_unselected="@drawable/dot" />
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/custom_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/naira_symbol"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_toStartOf="@id/price"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="3dp"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentEnd="true"
+            android:text="200,000"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/hostel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hostel Name"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="21sp"
+            />
+        <RelativeLayout
+            android:id="@+id/location_layout"
+            android:layout_below="@id/hostel_name"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/location_icon"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location"/>
+
+            <TextView
+                android:id="@+id/location_text"
+                android:textSize="18sp"
+                android:text="Asherifa"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_toEndOf="@id/location_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/agent_layout"
+            android:layout_below="@id/hostel_name"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/agent_icon"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="21.56dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_support"/>
+
+            <ImageView
+                android:id="@+id/phone_icon"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_width="21.56dp"
+                android:layout_below="@id/agent_icon"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_phone_24dp"/>
+            <TextView
+                android:id="@+id/agent_number"
+                android:textSize="16sp"
+                android:layout_below="@id/agent"
+                android:layout_alignBaseline="@id/agent_icon"
+                android:text=""
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingTop="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_toEndOf="@id/agent_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_toEndOf="@id/agent_icon"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/agent"
+                android:text=""
+                android:layout_marginEnd="10dp"
+                android:paddingTop="4dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/features_title"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/location_layout"
+            android:layout_width="wrap_content"
+            android:text="Features"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="21sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:paddingStart="10dp"
+            android:id="@+id/feature_1"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/features_title"
+            android:drawableStart="@drawable/ic_tick"
+            android:drawablePadding="10dp"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:visibility="visible"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:paddingStart="10dp"
+            android:id="@+id/feature_2"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/feature_1"
+            android:drawableStart="@drawable/ic_tick"
+            android:drawablePadding="10dp"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:paddingStart="10dp"
+            android:id="@+id/feature_3"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/feature_2"
+            android:drawableStart="@drawable/ic_tick"
+            android:drawablePadding="10dp"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:paddingStart="10dp"
+            android:id="@+id/feature_4"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/feature_3"
+            android:drawableStart="@drawable/ic_tick"
+            android:drawablePadding="10dp"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

@@ -45,7 +45,7 @@ open class AccommodationAdapter (query: Query, private val listener: OnAccommoda
 
             // Load image
             Glide.with(itemView.accomodation_image.context)
-                .load(accommodation.image)
+                .load(accommodation.image_one)
                 .placeholder(R.drawable.ic_insert_photo_black_24dp)
                 .into(itemView.accomodation_image)
 

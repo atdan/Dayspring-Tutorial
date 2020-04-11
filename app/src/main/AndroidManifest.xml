@@ -18,6 +18,7 @@
             android:name=".CreateAccountActivity"
             android:parentActivityName=".LoginActivity" />
         <activity
+            android:parentActivityName=".HomeActivity"
             android:name=".ui.campus_news.CampusNewsDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

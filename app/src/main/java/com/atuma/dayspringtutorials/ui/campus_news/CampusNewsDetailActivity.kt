@@ -87,15 +87,11 @@ class CampusNewsDetailActivity : AppCompatActivity(), EventListener<DocumentSnap
     private fun onNewsLoaded(news: CampusNews) {
         Glide.with(campus_news_image.context)
             .load(news.image)
-            .asBitmap()
-//            .placeholder(R.drawable.)
+            .placeholder(R.drawable.ic_insert_photo_black_24dp)
             .into(campus_news_image)
 
         collapse_toolbar_layout.title = news.title
         campus_news_author.text = news.author
-        var newsText = "<![CDATA[" +news.news + "]]>"
-
-        var formatedNews = Html.fromHtml(newsText)
 
         val formText = news.news?.replace("_n","\n")
         Log.d(TAG, "news.news: ${news.news}")
