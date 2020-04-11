@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="330dp"
+    android:padding="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        android:elevation="10dp"
+        android:layout_margin="4dp"
+        android:layout_height="match_parent"
+        android:outlineSpotShadowColor="@color/lightGray"
+        android:layout_marginTop="5dp"
+        android:id="@+id/accomodation_card">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <cn.gavinliu.android.lib.shapedimageview.ShapedImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:shape_mode="round_rect"
+                app:round_radius="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gradient_up"
+                android:id="@+id/accomodation_image"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/naira_symbol"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_toStartOf="@id/price"
+                android:layout_below="@id/accomodation_image"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="3dp"/>
+            <TextView
+                android:id="@+id/price"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentEnd="true"
+                android:text="200,000"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_below="@id/accomodation_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/hostel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hostel Name"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:layout_below="@id/accomodation_image"
+                />
+            <RelativeLayout
+                android:layout_below="@id/hostel_name"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/location_icon"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_location"/>
+
+                <TextView
+                    android:id="@+id/location_text"
+                    android:textSize="18sp"
+                    android:text="Asherifa"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_toEndOf="@id/location_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

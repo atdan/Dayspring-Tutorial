@@ -77,6 +77,7 @@
                 android:gravity="start"
                 android:theme="@style/TextInputLayout"
                 android:layout_marginStart="10dp"
+                android:layout_margin="5dp"
                 android:layout_marginEnd="10dp"
                 android:id="@+id/first_nameEditText"
                 android:inputType="textCapWords"/>
@@ -103,11 +104,10 @@
                 android:theme="@style/TextInputLayout"
 
                 android:gravity="start"
-
+                android:layout_margin="5dp"
                 android:id="@+id/emailEditText"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:padding="5dp"
                 android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
 

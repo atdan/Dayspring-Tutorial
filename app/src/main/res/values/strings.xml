@@ -27,7 +27,7 @@
     <string name="menu_find_us">Find Us</string>
     <string name="message_no_results">Opps, seems something went wrong \nswipe down to refresh</string>
     <string name="title_activity_login">Sign in</string>
-    <string name="prompt_email">Email  (optional)</string>
+    <string name="prompt_email">Email</string>
     <string name="prompt_password">    Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -42,8 +42,11 @@
     <string name="prompt_first_name">First Name</string>
     <string name="prompt_phone_number">Phone   eg: 08034099014</string>
     <string name="prompt_re_enter_password">Re-enter Password</string>
-    <string name="prompt_matric_number">Matric Number</string>
-    
+    <string name="prompt_matric_number">Matric Number (optional)</string>
+    <string name="menu_logout">Logout</string>
+    <string name="message_please_wait">Please Wait…</string>
+    <string name="naira_symbol">₦</string>
+
     <string-array name="Administration_dept">
         <item>Accounting</item>
         <item>Business Administration</item>

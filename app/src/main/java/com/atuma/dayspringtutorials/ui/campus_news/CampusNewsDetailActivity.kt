@@ -67,12 +67,7 @@ class CampusNewsDetailActivity : AppCompatActivity(), EventListener<DocumentSnap
         super.finish()
         overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right)
     }
-    companion object {
 
-        private const val TAG = "CampusNewsDetail"
-
-        const val KEY_CAMPUS_NEWS_ID = "key_campus_news_id"
-    }
 
     override fun onEvent(snapshot: DocumentSnapshot?, e: FirebaseFirestoreException?) {
 
@@ -123,6 +118,13 @@ class CampusNewsDetailActivity : AppCompatActivity(), EventListener<DocumentSnap
             (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
                 .hideSoftInputFromWindow(view.windowToken, 0)
         }
+    }
+
+    companion object {
+
+        private const val TAG = "CampusNewsDetail"
+
+        const val KEY_CAMPUS_NEWS_ID = "key_campus_news_id"
     }
 
 }

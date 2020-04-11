@@ -50,6 +50,9 @@ dependencies {
 
     //Firebase dependencies
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
+    // Firestore (Kotlin)
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.4.1'
 
     //splash
     implementation 'com.rbddevs.splashy:splashy:1.2.0'
@@ -60,8 +63,6 @@ dependencies {
     //fragment
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
 
-    // Firestore (Kotlin)
-    implementation 'com.google.firebase:firebase-firestore-ktx:21.4.1'
 
     //Round ImageView
     implementation 'cn.gavinliu:ShapedImageView:0.8.7'
@@ -74,6 +75,9 @@ dependencies {
 
     //Dialog spinner
     implementation 'com.github.chivorns.androidx:smartmaterialspinner:1.2.1'
+
+    //permissions
+    implementation 'com.karumi:dexter:6.0.0'
 
 
 }

@@ -8,13 +8,16 @@ data class User(
     var matric: String? = null,
     var faculty: String? = null,
     var department: String? = null,
-    var image: String? = null
+    var image: String? = null,
+    var currentuser: String? = null
 ){
     companion object{
         const val FIELD_SURNAME = "surname"
         const val FIELD_FIRST_NAME = "firstname"
         const val FIELD_EMAIL = "email"
         const val FIELD_PHONE = "phone"
+        const val FIELD_CURRENT_USER = "currentuser"
+
         const val FIELD_MATRIC = "matric"
         const val FIELD_DEPARTMENT = "department"
 

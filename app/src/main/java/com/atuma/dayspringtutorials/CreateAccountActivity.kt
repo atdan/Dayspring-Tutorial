@@ -1,7 +1,9 @@
 package com.atuma.dayspringtutorials
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -12,7 +14,8 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import com.atuma.dayspringtutorials.model.User
-import com.atuma.dayspringtutorials.ui.login.LoginActivity
+import com.atuma.dayspringtutorials.util.UserSession
+import com.atuma.dayspringtutorials.util.Utils
 import com.chivorn.smartmaterialspinner.SmartMaterialSpinner
 import com.google.firebase.firestore.ktx.*
 import com.google.firebase.ktx.Firebase
@@ -32,6 +35,12 @@ class CreateAccountActivity : AppCompatActivity() {
     var departmentSpinnerItem: String? = null
 
     var db = Firebase.firestore
+    var userSession: UserSession? = null
+
+
+
+    private lateinit var pref: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
@@ -48,11 +57,19 @@ class CreateAccountActivity : AppCompatActivity() {
         //init firestore
         db= Firebase.firestore
 
+        pref = getSharedPreferences(USER_PREF_NAME, Context.MODE_PRIVATE)
+        editor = pref.edit()
+        departmentSpinner = findViewById(R.id.department_spinner)
+
+
         initFacultySpinner()
         initDepartmentSpinner(FACULTY_DEFAULT)
         editTextListeners()
+        populateFieldsFromPref()
+
         continue_sign_up.setOnClickListener {
             disableErrorEditText()
+
 
             if (TextUtils.isEmpty(surname.editText?.text.toString())){
                 surname.error = errorMessage
@@ -81,11 +98,93 @@ class CreateAccountActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            continue_sign_up.startAnimation()
-            saveUserDetails()
+            val userHashMap: HashMap<String, String?> = HashMap()
+            userHashMap[FIELD_SURNAME] = surname.editText?.text.toString()
+            userHashMap[FIELD_FIRST_NAME] = first_name.editText?.text.toString()
+            userHashMap[FIELD_DEPARTMENT] = departmentSpinnerItem
+            userHashMap[FIELD_EMAIL] = email.editText?.text.toString()
+            userHashMap[FIELD_FACULTY] = facultySpinnerItem
+            userHashMap[FIELD_IMAGE] = null
+            userHashMap[FIELD_MATRIC] = matric_number.editText?.text.toString()
+            userHashMap[FIELD_PHONE] = phone_number.editText?.text.toString()
+
+            userSession?.createLoginSession(userHashMap)
+
+            saveUserSession(userHashMap)
+            val i = Intent(this, RegisterActivity::class.java)
+            startActivity(i)
+            overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left)
 
 
 
+
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        populateFieldsFromPref()
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        populateFieldsFromPref()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+    }
+    override fun onPause() {
+        super.onPause()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        populateFieldsFromPref()
+    }
+
+    private val userDetails: java.util.HashMap<String, String?>
+        get() {
+            val user = java.util.HashMap<String, String?>()
+            user[FIELD_SURNAME] = pref.getString(UserSession.FIELD_SURNAME, null)
+            user[FIELD_FIRST_NAME] = pref.getString(UserSession.FIELD_FIRST_NAME, null)
+            user[FIELD_DEPARTMENT] = pref.getString(UserSession.FIELD_DEPARTMENT, null)
+            user[FIELD_EMAIL] = pref.getString(UserSession.FIELD_EMAIL, null)
+            user[FIELD_MATRIC] = pref.getString(UserSession.FIELD_MATRIC, null)
+            user[FIELD_FACULTY] = pref.getString(UserSession.FIELD_FACULTY, null)
+            user[FIELD_PHONE] = pref.getString(UserSession.FIELD_PHONE, null)
+            user[FIELD_IMAGE] = pref.getString(UserSession.FIELD_IMAGE, null)
+            user[FIELD_FACULTY_POSITION] = pref.getInt(FIELD_FACULTY_POSITION, 0).toString()
+            user[FIELD_DEPARTMENT_POSITION] = pref.getInt(FIELD_DEPARTMENT_POSITION, 0).toString()
+            return user
+        }
+
+    private fun populateFieldsFromPref(){
+        try {
+            val userHashMap = userDetails
+            surname.editText?.setText(userHashMap[FIELD_SURNAME])
+            first_name.editText?.setText(userHashMap[FIELD_FIRST_NAME])
+            email.editText?.setText(userHashMap[FIELD_EMAIL])
+
+            matric_number.editText?.setText(userHashMap[FIELD_MATRIC])
+            phone_number.editText?.setText(userHashMap[FIELD_PHONE])
+            facultySpinner?.isSelected = true
+            facultySpinner?.setSelection(userHashMap[FIELD_FACULTY_POSITION]?.toInt()!!)
+            departmentSpinner?.isSelected = true
+            initDepartmentSpinner(userHashMap[FIELD_FACULTY]!!)
+//            departmentSpinner?.setSelection(userHashMap[FIELD_DEPARTMENT_POSITION]?.toInt()!!)
+
+        }catch (e: Exception){
+            Log.e(TAG, "Error populating fields: $e")
         }
     }
 
@@ -150,7 +249,6 @@ class CreateAccountActivity : AppCompatActivity() {
     }
 
     private fun initDepartmentSpinner(facultyName: String){
-        departmentSpinner = findViewById(R.id.department_spinner)
         departmentList = ArrayList()
         when(facultyName){
             FACULTY_DEFAULT -> {
@@ -169,6 +267,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         id: Long
                     ) {
                         departmentSpinnerItem = departmentSpinner!!.item[position]
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                     }
 
                 }
@@ -189,6 +289,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         id: Long
                     ) {
                         departmentSpinnerItem = departmentSpinner!!.item[position]
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                     }
 
                 }
@@ -209,6 +311,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         id: Long
                     ) {
                         departmentSpinnerItem = departmentSpinner!!.item[position]
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                     }
 
                 }
@@ -228,6 +332,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -248,6 +354,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -268,6 +376,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -288,6 +398,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -308,6 +420,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -328,6 +442,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -348,6 +464,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -368,6 +486,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -388,6 +508,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -408,6 +530,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -428,6 +552,8 @@ class CreateAccountActivity : AppCompatActivity() {
                         position: Int,
                         id: Long
                     ) {
+                        editor.putInt(FIELD_DEPARTMENT_POSITION, position)
+
                         departmentSpinnerItem = departmentSpinner!!.item[position]
                     }
 
@@ -435,6 +561,7 @@ class CreateAccountActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun initFacultySpinner(){
 
         facultySpinner = findViewById(R.id.faculty_spinner)
@@ -469,6 +596,9 @@ class CreateAccountActivity : AppCompatActivity() {
             ) {
                 facultySpinnerItem = facultyList!![position]
                 initDepartmentSpinner(facultyList!![position])
+
+                editor.putInt(FIELD_FACULTY_POSITION, position)
+
             }
 
         }
@@ -490,15 +620,13 @@ class CreateAccountActivity : AppCompatActivity() {
         db.collection(COLLECTION_USERS)
             .add(user)
             .addOnSuccessListener { documentReference ->
-
-                val bitmap = BitmapFactory.decodeResource(resources,R.drawable.ic_check_white_24dp)
-//                continue_sign_up.doneLoadingAnimation(R.color.colorPrimaryDark,bitmap)
-                continue_sign_up.dispose()
+                continue_sign_up.stopAnimation()
                 Log.d(TAG,"Document added with ID ${documentReference.id}")
                 val i = Intent(this, RegisterActivity::class.java)
                 startActivity(i)
                 overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left)
             }.addOnFailureListener{e ->
+                continue_sign_up.stopAnimation()
                 val bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_close_white_24dp)
                 continue_sign_up.doneLoadingAnimation(R.color.red, bitmap)
                 continue_sign_up.dispose()
@@ -506,6 +634,20 @@ class CreateAccountActivity : AppCompatActivity() {
             }
 
 
+    }
+
+    fun saveUserSession(user: java.util.HashMap<String, String?>){
+        editor.putString(FIELD_SURNAME, user[UserSession.FIELD_SURNAME])
+        editor.putString(FIELD_FIRST_NAME, user[UserSession.FIELD_FIRST_NAME])
+        editor.putString(FIELD_DEPARTMENT, user[UserSession.FIELD_DEPARTMENT])
+        editor.putString(FIELD_EMAIL, user[UserSession.FIELD_EMAIL])
+        editor.putString(FIELD_MATRIC, user[UserSession.FIELD_MATRIC])
+        editor.putString(FIELD_FACULTY, user[UserSession.FIELD_FACULTY])
+        editor.putString(FIELD_PHONE, user[UserSession.FIELD_PHONE])
+        editor.putString(FIELD_IMAGE, user[UserSession.FIELD_IMAGE])
+        editor.commit()
+
+        Log.d("Save Login Session", "Login session Gotten: $user")
     }
 
     companion object {
@@ -521,9 +663,15 @@ class CreateAccountActivity : AppCompatActivity() {
         // check first time app launch
         const val IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch"
 
+        private const val USER_PREF_NAME = "saveUserPref"
+
         const val FIELD_SURNAME = "surname"
         const val FIELD_FIRST_NAME = "firstname"
         const val FIELD_EMAIL = "email"
+        const val FIELD_FACULTY_POSITION = "faculty-position"
+        const val FIELD_DEPARTMENT_POSITION = "department-position"
+
+
         const val FIELD_PHONE = "phone"
         const val FIELD_MATRIC = "matric"
         const val FIELD_DEPARTMENT = "department"

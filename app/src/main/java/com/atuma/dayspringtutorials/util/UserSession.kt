@@ -3,7 +3,9 @@ package com.atuma.dayspringtutorials.util
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import com.atuma.dayspringtutorials.ui.login.LoginActivity
+import android.util.Log
+import com.atuma.dayspringtutorials.HomeActivity
+import com.atuma.dayspringtutorials.LoginActivity
 import java.util.HashMap
 
 class UserSession(internal var context: Context){
@@ -18,7 +20,8 @@ class UserSession(internal var context: Context){
     var isFirstTimeLaunch: Boolean?
         get() = pref.getBoolean(IS_FIRST_TIME_LAUNCH, true)
         set(value){
-            editor.putBoolean(FIRST_TIME, value!!)
+            Log.d(TAG, "UserSession isFirstTimeLaunch setValue: $value")
+            editor.putBoolean(IS_FIRST_TIME_LAUNCH, value!!)
             editor.commit()
         }
 
@@ -42,18 +45,27 @@ class UserSession(internal var context: Context){
         editor.putString(FIELD_PHONE, user[FIELD_PHONE])
         editor.putString(FIELD_IMAGE, user[FIELD_IMAGE])
         editor.commit()
+
+        Log.d("Save Login Session", "Login session Gotten: $user")
     }
     /**
      * Check Login
      */
     fun checkLogin(){
-        if (!this.isLoggedIn){
-           // not logged in
-            val i = Intent(context, LoginActivity::class.java)
+        this.isFirstTimeLaunch = false
+//        if (!this.isLoggedIn){
+//           // not logged in
+//            Log.d("UserSession", "User Not Logged In: To go to LoginActivity")
+//            val i = Intent(context, LoginActivity::class.java)
+//            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//            i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+//            context.startActivity(i)
+//        }else{
+            val i = Intent(context, HomeActivity::class.java)
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(i)
-        }
+//        }
     }
 
     /**
@@ -111,6 +123,8 @@ class UserSession(internal var context: Context){
 
         // All Shared Preferences Keys
         private const val IS_LOGIN = "IsLoggedIn"
+        private const val TAG = "UserSession"
+
         // check first time app launch
         const val IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch"
 

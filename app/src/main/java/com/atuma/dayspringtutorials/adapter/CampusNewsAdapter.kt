@@ -36,10 +36,7 @@ open class CampusNewsAdapter(query: Query, private val listener: OnCampusNewsSel
             listener: OnCampusNewsSelectedListener?
         ) {
 
-            val campusNews = snapshot.toObject<CampusNews>()
-            if (campusNews == null) {
-                return
-            }
+            val campusNews = snapshot.toObject<CampusNews>() ?: return
 
             val resources = itemView.resources
 
