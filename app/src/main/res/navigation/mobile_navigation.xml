@@ -57,15 +57,20 @@
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
     <fragment
+        tools:layout="@layout/fragment_part_one_courses"
         android:id="@+id/partOneCoursesFragment"
         android:name="com.atuma.dayspringtutorials.ui.partOne.PartOneCoursesFragment"
-        android:label="PartOneCoursesFragment" />
+        android:label="100 Level" />
     <fragment
+        tools:layout="@layout/fragment_part_two_courses"
         android:id="@+id/partTwoCoursesFragment"
         android:name="com.atuma.dayspringtutorials.ui.partTwo.PartTwoCoursesFragment"
-        android:label="PartTwoCoursesFragment" />
+        android:label="200 Level" />
     <fragment
+        tools:layout="@layout/fragment_part_three_courses"
         android:id="@+id/partThreeCoursesFragment"
         android:name="com.atuma.dayspringtutorials.ui.partThree.PartThreeCoursesFragment"
-        android:label="PartThreeCoursesFragment" />
+        android:label="300 Level" />
+
+
 </navigation>

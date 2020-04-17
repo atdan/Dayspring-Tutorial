@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chm101_navigation"
+    app:startDestination="@+id/chm101Fragment">
+
+    <fragment
+        tools:layout="@layout/fragment_chm101"
+        android:id="@+id/chm101Fragment"
+        android:name="com.atuma.dayspringtutorials.ui.courses.partOne.CoursesFragment"
+        android:label="CHM 101">
+        <action
+            android:id="@+id/action_chm101Fragment_to_chm101SelectQuizTopic"
+            app:destination="@id/chm101SelectQuizTopic"
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right"/>
+        <action
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right"
+            android:id="@+id/action_chm101Fragment_to_pastQuestionFragment"
+            app:destination="@id/pastQuestionFragment" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_select_quiz_topic"
+        android:id="@+id/chm101SelectQuizTopic"
+        android:name="com.atuma.dayspringtutorials.ui.courses.partOne.SelectCourseQuizTopicFragment"
+        android:label="Select Topic"/>
+    <fragment
+        tools:layout="@layout/fragment_past_questions"
+        android:id="@+id/pastQuestionFragment"
+        android:name="com.atuma.dayspringtutorials.ui.courses.partOne.PastQuestionsFragment"
+        android:label="Past Questions"/>
+</navigation>

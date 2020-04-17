@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/lightGray"
+    android:layout_height="match_parent"
+    android:padding="25dp">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_close_red_24dp"
+        android:id="@+id/dialog_close"/>
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:text="Instruction"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_below="@id/dialog_title"
+        android:id="@+id/dialog_message"
+        android:text="This is a multiple choice test.\nMind the number of questions available and don't forget the time!\nYour test will be automatically submitted when your time elapses.\nYou have 40 minutes for this test. \nGood Luck"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/dialog_start_button"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:text="Start Now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/post_comment_button_background"
+        android:layout_below="@id/dialog_message"/>
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/lightGray"
+    android:layout_height="match_parent"
+    tools:context=".ui.courses.partOne.SelectCourseQuizTopicFragment">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/chm101_quiz_topics_recycler"
+           android:layout_width="match_parent"
+           android:padding="2dp"
+           tools:listitem="@layout/item_quiz_topic"
+           android:background="@color/lightGray"
+           android:layout_height="match_parent"/>
+
+       <!-- Empty list (pizza guy) view -->
+       <LinearLayout
+           android:id="@+id/viewEmpty"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_alignParentBottom="true"
+           android:layout_centerHorizontal="true"
+           android:gravity="center"
+           android:orientation="vertical"
+           android:visibility="visible"
+           tools:visibility="visible">
+
+           <ImageView
+               style="@style/AppTheme.PizzaGuy"
+               android:src="@drawable/ic_no_network" />
+
+           <TextView
+               style="@style/AppTheme.Body1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:text="@string/message_please_wait"
+               android:textColor="@color/black" />
+
+       </LinearLayout>
+
+   </RelativeLayout>
+</FrameLayout>

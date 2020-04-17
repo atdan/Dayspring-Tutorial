@@ -20,6 +20,7 @@
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
+                android:id="@+id/chm101"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/lightGray"
                 android:outlineAmbientShadowColor="@color/textGray"
@@ -68,6 +69,7 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
+                android:id="@+id/chm102"
                 android:outlineSpotShadowColor="@color/lightGray"
                 android:outlineAmbientShadowColor="@color/textGray"
                 android:layout_margin="5dp"
@@ -121,6 +123,7 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/mth101"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
@@ -167,6 +170,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/mth102"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
@@ -223,6 +227,7 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/mth104"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
@@ -269,6 +274,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/mth105"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
@@ -326,6 +332,7 @@
 
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="10dp"
+                android:id="@+id/mth106"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/lightGray"
@@ -373,6 +380,7 @@
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
+                android:id="@+id/phy101"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/lightGray"
                 android:outlineAmbientShadowColor="@color/textGray"
@@ -428,6 +436,7 @@
 
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="10dp"
+                android:id="@+id/phy102"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/lightGray"
@@ -476,6 +485,7 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
+                android:id="@+id/phy105"
                 android:outlineSpotShadowColor="@color/lightGray"
                 android:outlineAmbientShadowColor="@color/textGray"
                 android:layout_margin="5dp"
@@ -526,6 +536,7 @@
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="10dp"
                 app:cardElevation="5dp"
+                android:id="@+id/phy106"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/lightGray"
                 android:outlineAmbientShadowColor="@color/textGray"
@@ -571,6 +582,7 @@
 
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="10dp"
+                android:id="@+id/ssc105"
                 app:cardElevation="5dp"
                 android:layout_weight="1"
                 android:outlineSpotShadowColor="@color/lightGray"
@@ -607,7 +619,7 @@
                             android:padding="10dp"
                             android:layout_height="match_parent"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/ic_mathematics"/>
+                            android:src="@drawable/ic_abacus"/>
                     </RelativeLayout>
 
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/pq_year"
+                android:text="2018/2019"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginEnd="3dp"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Objective Past Questions and Answers"
+                android:id="@+id/pq_type"
+                android:layout_toEndOf="@id/pq_year"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="3dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

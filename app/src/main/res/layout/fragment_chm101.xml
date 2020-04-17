@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGray"
+    tools:context=".ui.courses.partOne.CoursesFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/chm101_image"
+            android:src="@drawable/ic_test_tube"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="200dp"
+            android:layout_height="300dp"/>
+
+        <Button
+            android:background="@drawable/post_comment_button_background"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/takeQuiz"
+            android:padding="3dp"
+            android:elevation="10dp"
+            android:text="Take a Quiz"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_below="@id/chm101_image"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:background="@drawable/post_comment_button_background"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/pastQuestion"
+            android:padding="3dp"
+            android:elevation="10dp"
+            android:text="Past Questions"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_below="@id/takeQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            />
+        <Button
+            android:layout_marginTop="10dp"
+            android:background="@drawable/post_comment_button_background"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/lectureNotes"
+            android:padding="3dp"
+            android:elevation="10dp"
+            android:text="Lecture Notes"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_below="@id/pastQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            />
+
+    </RelativeLayout>
+</FrameLayout>
